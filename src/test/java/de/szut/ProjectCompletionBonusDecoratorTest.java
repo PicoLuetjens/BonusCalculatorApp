@@ -9,30 +9,30 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class CompanyServiceBonusDecoratorTest {
+class ProjectCompletionBonusDecoratorTest {
 
     @ParameterizedTest
     @MethodSource("bonusProvider")
-    @DisplayName("Correct bonus calculation for given years")
-    void shouldReturnCorrectlyCalculatedBonusForGivenYears(double baseBonus, int years, double expectedBonus) {
+    @DisplayName("Correct bonus calculation for completed projects")
+    void shouldReturnCorrectlyCalculatedBonusForGivenProjectCompletions(double baseBonus, int completedProjects, double expectedBonus) {
+
         Bonus bonus = new BaseBonus(baseBonus);
 
-        bonus = new CompanyServiceBonusDecorator(bonus, years);
+        bonus = new ProjectCompletionBonusDecorator(bonus, completedProjects);
 
         double result = bonus.calculateBonus();
 
         assertEquals(expectedBonus, result, "unexpected result");
-
     }
 
     private static Stream<Arguments> bonusProvider() {
         return Stream.of(
-            Arguments.of(1000d, 10, 1200d),
-            Arguments.of(1000d, 5, 1100d),
-            Arguments.of(1000d, 2, 1000d),
-            Arguments.of(1000d, 15, 1300d),
-            Arguments.of(1000d, 20, 1400d)
+                Arguments.of(1000d, 1, 1500d),
+                Arguments.of(1000d, 3, 2500d),
+                Arguments.of(1000d, 5, 3500d),
+                Arguments.of(1000d, 7, 4500d),
+                Arguments.of(1000d, 10, 6000d)
         );
-
     }
+
 }
