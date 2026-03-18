@@ -13,7 +13,7 @@ class LowAbsenceBonusDecoratorTest {
 
     @ParameterizedTest
     @MethodSource("bonusProvider")
-    @DisplayName("Correct bonus calculation for ")
+    @DisplayName("Correct bonus calculation for low absence")
     void shouldReturnCorrectlyCalculatedBonusForLowAbsence(double baseBonus, int absentDays, double expectedBonus) {
         Bonus bonus = new BaseBonus(baseBonus);
 
