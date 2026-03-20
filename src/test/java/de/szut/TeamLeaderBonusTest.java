@@ -17,7 +17,7 @@ class TeamLeaderBonusTest {
     void shouldReturnCorrectlyCalculatedBonusForTeamLeader(double baseBonus, boolean isTeamLeder, double expectedBonus) {
         Bonus bonus = new BaseBonus(baseBonus);
 
-        bonus = new TeamLeaderBonus(bonus, isTeamLeder);
+        bonus = new TeamLeaderBonusDecorator(bonus, isTeamLeder);
 
         double result = bonus.calculateBonus();
 

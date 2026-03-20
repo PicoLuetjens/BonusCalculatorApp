@@ -1,10 +1,10 @@
 package de.szut;
 
-public class TeamLeaderBonus extends BonusDecorator {
+public class TeamLeaderBonusDecorator extends BonusDecorator {
     private final double teamLeaderBonus = 200;
     private final boolean isTeamLeader;
 
-    public TeamLeaderBonus(Bonus bonus, boolean isTeamLeader) {
+    public TeamLeaderBonusDecorator(Bonus bonus, boolean isTeamLeader) {
         super(bonus);
         this.isTeamLeader = isTeamLeader;
     }

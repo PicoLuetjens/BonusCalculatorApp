@@ -34,5 +34,4 @@ class ProjectCompletionBonusDecoratorTest {
                 Arguments.of(1000d, 10, 6000d)
         );
     }
-
 }
