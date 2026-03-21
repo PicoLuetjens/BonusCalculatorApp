@@ -4,7 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 
@@ -20,6 +20,8 @@ class BonusDecoratorTest {
 
         given(bonus.calculateBonus()).willReturn(bonusValue);
 
-        assertEquals(bonusDecorator.calculateBonus(), bonusValue, "unexpected result");
+        double result = bonusDecorator.calculateBonus();
+
+        assertThat(result).withFailMessage("unexpected result").isEqualTo(bonusValue);
     }
 }

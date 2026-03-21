@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 
 class LowAbsenceBonusDecoratorTest {
@@ -22,8 +22,7 @@ class LowAbsenceBonusDecoratorTest {
 
         double result = bonus.calculateBonus();
 
-        assertEquals(expectedBonus, result, "unexpected result");
-
+        assertThat(result).withFailMessage("unexpected result").isEqualTo(expectedBonus);
     }
 
     public static Stream<Arguments> bonusProvider() {

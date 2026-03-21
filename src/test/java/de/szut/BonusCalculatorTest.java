@@ -1,12 +1,13 @@
 package de.szut;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 class BonusCalculatorTest {
 
@@ -14,11 +15,12 @@ class BonusCalculatorTest {
 
     @ParameterizedTest
     @MethodSource("employeeProvider")
+    @DisplayName("Correct bonus calculation for given employee")
     void shouldReturnCalculatedBonusForGivenEmployee(Employee employee, double expectedBonus) {
 
         double result = bonusCalculator.calculateBonus(employee);
 
-        assertEquals(expectedBonus, result, "unexpected result");
+        assertThat(result).withFailMessage("unexpected result").isEqualTo(expectedBonus);
     }
 
     private static Stream<Arguments> employeeProvider() {

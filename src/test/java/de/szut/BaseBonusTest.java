@@ -4,7 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 class BaseBonusTest {
 
@@ -14,6 +14,7 @@ class BaseBonusTest {
     void shouldReturnCorrectAmountForGivenBonus(double bonus) {
         BaseBonus baseBonus = new BaseBonus(bonus);
 
-        assertEquals(baseBonus.calculateBonus(), bonus, "unexpected result");
+        double result = baseBonus.calculateBonus();
+        assertThat(bonus).withFailMessage("unexpected result").isEqualTo(result);
     }
 }
