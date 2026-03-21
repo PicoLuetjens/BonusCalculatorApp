@@ -5,6 +5,9 @@ public class BonusService {
     private final double maxBonus = 5000;
 
     public double applyBonus(double bonus) {
-        return 1;
+        if(bonus > maxBonus) {
+            return maxBonus;
+        }
+        return Math.max(bonus, minBonus);
     }
 }
