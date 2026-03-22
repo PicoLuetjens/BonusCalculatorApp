@@ -27,7 +27,7 @@ class BonusCalculatorTest {
     }
 
     @Test
-    @DisplayName("Correct handling for null source bonus")
+    @DisplayName("Correct handling for null source employee")
     void shouldThrowExceptionWhenGivenEmployeeIsNull() {
         Employee employee = null;
 
