@@ -1,10 +1,17 @@
 package de.szut;
 
+import de.szut.exception.BonusCalculationException;
+
 public class BonusCalculator {
 
     private final BonusService bonusService = new BonusService();
 
     public double calculateBonus(Employee employee) {
+
+        if(employee == null) {
+            throw new BonusCalculationException("given employee cannot be null");
+        }
+
         Bonus bonus = new BaseBonus(1000);
 
         bonus = new CompanyServiceBonusDecorator(bonus, employee.companyService());
