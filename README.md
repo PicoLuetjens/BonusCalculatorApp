@@ -8,9 +8,28 @@
 ![Maven](https://img.shields.io/badge/Maven-3.9+-orange)
 
 
-Decorator Pattern Software Implementation for School.
+# Bonus Calculator App
 
-Contributers:
-- Pico
-- Rajbir
-- Parima
+Eine einfache Java-Anwendung zur Demonstration des **Decorator Patterns** im Rahmen eines Schulprojekts.
+
+## Überblick
+
+Dieses Projekt zeigt, wie das Decorator Pattern verwendet werden kann, um die Bonusberechnung flexibel und wartbar zu erweitern.
+
+## Features
+
+* Grundlegende Bonusberechnung
+* Erweiterbare Funktionalität durch Decorators
+
+## Ausführen
+
+1. Repository klonen
+2. In einer IDE öffnen (z. B. IntelliJ oder Eclipse)
+3. Die Main-Klasse ausführen
+
+## Mitwirkende
+
+* Pico
+* Rajbir
+* Parima
+
