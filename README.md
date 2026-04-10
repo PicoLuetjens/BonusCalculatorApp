@@ -24,7 +24,7 @@ Dieses Projekt zeigt, wie das Decorator Pattern verwendet werden kann, um die Bo
 ## Ausführen
 
 1. Repository klonen
-2. In einer IDE öffnen (z. B. IntelliJ oder Eclipse)
+2. In einer IDE öffnen
 3. Die Main-Klasse ausführen
 
 ## Mitwirkende
